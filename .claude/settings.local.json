@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(timeout 8 npx ts-node src/index.ts)",
+      "Bash(curl -s http://localhost:3000/health)",
+      "Bash(curl -s http://localhost:3000/api/rooms)",
+      "Bash(curl -s http://localhost:3000/api/services)",
+      "Bash(PORT=3001 npx ts-node src/index.ts)",
+      "Bash(curl -s http://localhost:3001/health)",
+      "Bash(curl -s http://localhost:3001/api/services)",
+      "Bash(curl -s \"http://localhost:3001/api/rooms/available-between?start=2026-04-20&end=2026-04-25\")",
+      "Bash(curl -s -X POST http://localhost:3001/api/guests -H \"Content-Type: application/json\" -d \"{\\\\\"full_name\\\\\":\\\\\"Juan Perez\\\\\",\\\\\"document_number\\\\\":\\\\\"12345678\\\\\",\\\\\"email\\\\\":\\\\\"juan@test.com\\\\\",\\\\\"phone\\\\\":\\\\\"70000001\\\\\"}\")",
+      "Bash(curl -s -X POST http://localhost:3001/api/stays -H \"Content-Type: application/json\" -d \"{\\\\\"document_number\\\\\":\\\\\"12345678\\\\\",\\\\\"room_id\\\\\":1,\\\\\"start_date\\\\\":\\\\\"2026-04-20\\\\\",\\\\\"end_date\\\\\":\\\\\"2026-04-23\\\\\"}\")",
+      "Bash(curl -s http://localhost:3001/api/stays/active)",
+      "Bash(curl -s -X PATCH http://localhost:3001/api/stays/1/checkout -H \"Content-Type: application/json\" -d \"{}\")",
+      "Bash(curl -s http://localhost:3001/api/stays/guest/12345678)",
+      "Bash(pkill -f \"ts-node src/index.ts\")",
+      "Bash(exit 0)"
+    ]
+  }
+}
